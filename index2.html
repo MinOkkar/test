@@ -1,0 +1,112 @@
+<head>
+  <title>Send a Love Letter!</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Varela Round", "Quicksand", sans-serif;
+    background: url(background.gif);
+  }
+
+  .postcard {
+    width: 800px;
+    height: 500px;
+    background-color: #f7f7f7;
+    margin: 0 auto;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3em;
+    box-shadow: 0.8em 0.8em 15px rgba(0, 0, 0, 0.3);
+    -ms-transform: rotate(2.5deg); /* IE 9 */
+    -webkit-transform: rotate(2.5deg); /* Chrome, Safari, Opera */
+    transform: rotate(2.5deg);
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 5em;
+    color: #af76ddd2;
+    margin-bottom: -15px;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .happyanni {
+    animation: colorchanges 3s infinite;
+  }
+  @keyframes colorchanges {
+    0% {
+      color: pink;
+    }
+    50% {
+      color: black;
+    }
+
+    100% {
+      color: pink;
+    }
+  }
+  .beating-heart {
+    display: inline-block;
+    font-size: 24px; /* Adjust size if needed */
+    animation: heartbeat 0.5s infinite;
+  }
+  /*animation*/
+  .postcard:hover,
+  .postcard:active,
+  .postcard:focus {
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+</style>
+<body>
+  <div class="wrap">
+    <h1>Dear Princess</h1>
+    <div class="postcard">
+      <p>dear my girlfriend... <span class="beating-heart">❤️</span></p>
+      <p>
+        Happy anniversary babee!! its almost 2 year !! and first I love you and
+        I wish I could be with you tonight, but I have a lot of homework to
+        finish. Even though I can't be there in person, I made this webpage for
+        you to show how much you mean to me.I spent this night to code this
+        project and i still havent finished my homework haha. So i hope you love
+        this gift. Every moment spent with you feels like a precious treasure,
+        and I cherish every memory we've created, from our first awkward date to
+        the laughter we share today.I love doing life with you and can’t wait
+        for the adventures ahead.
+        <span class="happyanni">Happy anniversary my love!</span>
+        <hr>
+        <audio controls>
+          <source src="voice.aac" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </p>
+    </div>
+  </div>
+</body>

@@ -1,3 +1,6 @@
+html {
+  font-family: Cursive;
+}
 .gallery {
   --d: 10s;
   display: grid;
@@ -166,7 +169,7 @@ body {
 
 #div2 > h2 {
   margin-top: 20%;
-  font-size: 3rem;
+  font-size: 2.3rem;
   background-color: blue;
 }
 
