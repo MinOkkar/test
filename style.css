@@ -1,0 +1,46 @@
+body{
+    background-color: #221e1d;color: #ccc;
+    font-family:"Fira Mono",monospace;
+    line-height:1.5em;
+}
+header,main,footer{
+    display:block;
+    max-width:42em;
+    margin:0 auto;
+    text-align:center;
+}
+footer{
+    font-size:x-small;padding-top:4em
+}
+.colorc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.type{
+    border: 1px solid white;
+    margin: 1%;
+}
+
+.copy-button,.inputcolor{
+    background-color: #5a4e4a;
+}
+.color-display {
+    width: 300px;
+    height: 100px;
+    border: 1px solid #000;
+    margin-top: 10px;
+
+}
+.alert-msg {
+    position: fixed;
+    padding: 10px 50px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    top: 36%;
+    left: 25%;
+    display: none;
+}
