@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Day Flip Book</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="hedlinecontainer">
+      <div class="shine">Happy Anni babeee <3</div>
+    </div>
+
+    <div class="gallery">
+      <img src="1.jpg" alt="a lovely kiss in the night" />
+      <img src="2.jpg" alt="a women inside a car" />
+      <img src="3.jpg" alt="a baby" />
+      <img src="4.jpg" alt="a girl in the forest" />
+      <img src="5.jpg" alt="a girl" />
+    </div>
+    <hr />
+    <div id="div2">
+      <h2 class="shine" id="loveTimer"></h2>
+      <img src="https://giffiles.alphacoders.com/426/4268.gif" alt="" />
+      <p>YAY!! You’re still stuck with me! No escape now!</p>
+    </div>
+    <hr />
+    <div id="div3">
+      <p>Do you want to stay with me forever? 💖</p>
+      <img
+        src="https://i.pinimg.com/originals/0a/6f/06/0a6f0697514f5517e35b2e741eaaabed.gif"
+        alt=""
+      />
+      <div class="buttons">
+        <button id="yesBtn" onclick="location.href='yes.html'">Yes 💞</button>
+        <button id="noBtn" onmouseover="moveButton()">No 💔</button>
+      </div>
+    </div>
+    <footer>
+      <p>by Okkar for my princess <span class="shine2">yyae✨</span></p>
+    </footer>
+
+    <script>
+      function updateLoveTimer() {
+        const startDate = new Date("2023-06-10T00:00:00"); // Your anniversary date
+        const now = new Date();
+
+        // Calculate the difference in milliseconds
+        let diff = now - startDate;
+
+        // Convert milliseconds to time units
+        let years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+        diff -= years * (1000 * 60 * 60 * 24 * 365);
+
+        let months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+        diff -= months * (1000 * 60 * 60 * 24 * 30);
+
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        diff -= days * (1000 * 60 * 60 * 24);
+
+        let hours = Math.floor(diff / (1000 * 60 * 60));
+        diff -= hours * (1000 * 60 * 60);
+
+        let minutes = Math.floor(diff / (1000 * 60));
+        diff -= minutes * (1000 * 60);
+
+        let seconds = Math.floor(diff / 1000);
+
+        // Update the text
+        document.getElementById(
+          "loveTimer"
+        ).textContent = `We have been in love for - ${years} year ${months} month ${days} day and ${hours} hours ${minutes} minutes and ${seconds} seconds!`;
+
+        setTimeout(updateLoveTimer, 1000); // Update every second
+      }
+
+      updateLoveTimer(); // Start the timer
+
+      function moveButton() {
+        let btn = document.getElementById("noBtn");
+        let parentDiv = document.getElementById("div3"); // Restrict movement to div3
+
+        // Ensure div3 has relative positioning
+        parentDiv.style.position = "relative";
+        btn.style.position = "absolute";
+
+        // Get div3's dimensions
+        let maxX = parentDiv.clientWidth - btn.clientWidth;
+        let maxY = parentDiv.clientHeight - btn.clientHeight;
+
+        // Generate random position within div3
+        let x = Math.random() * maxX;
+        let y = Math.random() * maxY;
+
+        btn.style.left = `${x}px`;
+        btn.style.top = `${y}px`;
+      }
+    </script>
+  </body>
+</html>

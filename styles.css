@@ -1,0 +1,294 @@
+.gallery {
+  --d: 10s;
+  display: grid;
+  place-items: center;
+  width: 220px;
+  justify-self: center;
+  padding-top: 100px;
+}
+
+.gallery > img {
+  grid-area: 1/1;
+  width: 200%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 10px solid #f2f2f2;
+  box-shadow: 0 0 4px #0007;
+  z-index: 2;
+  animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
+}
+
+.gallery img:last-child {
+  animation-name: slide, z-order-last;
+}
+
+.gallery > img:nth-child(1) {
+  animation-delay: calc(0 * var(--d));
+  --r: 16deg;
+}
+
+.gallery > img:nth-child(2) {
+  animation-delay: calc(-0.2 * var(--d));
+  --r: -1deg;
+}
+
+.gallery > img:nth-child(3) {
+  animation-delay: calc(-0.4 * var(--d));
+  --r: -19deg;
+}
+
+.gallery > img:nth-child(4) {
+  animation-delay: calc(-0.6 * var(--d));
+  --r: 6deg;
+}
+
+.gallery > img:nth-child(5) {
+  animation-delay: calc(-0.8 * var(--d));
+  --r: -8deg;
+}
+
+@keyframes slide {
+  10% {
+    transform: translateX(120%) rotate(var(--r));
+  }
+  0%,
+  100%,
+  20% {
+    transform: translateX(0%) rotate(var(--r));
+  }
+}
+
+@keyframes z-order {
+  10%,
+  20% {
+    z-index: 1;
+  }
+  80% {
+    z-index: 2;
+  }
+}
+
+@keyframes z-order-last {
+  10%,
+  20% {
+    z-index: 1;
+  }
+  90% {
+    z-index: 2;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #f8f6f1;
+  background: url(background.gif);
+  background-color: rgba(238, 147, 162, 0.418);
+  backdrop-filter: blur(1px);
+}
+
+#hedlinecontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  background-color: rgba(255, 255, 255, 0.637);
+}
+
+.shine {
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(255, 0, 102, 0.3);
+  z-index: 10;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#222),
+      to(#222),
+      color-stop(0.5, #fff)
+    )
+    0 0 no-repeat;
+  -webkit-background-size: 150px;
+  -webkit-background-clip: text;
+  -webkit-animation-name: shine;
+  -webkit-animation-duration: 3s; /* Adjust the duration as needed */
+  -webkit-animation-iteration-count: infinite;
+  text-shadow: 0 0px 0px rgba(173, 27, 209, 0.644);
+}
+
+@-webkit-keyframes shine {
+  0%,
+  10% {
+    background-position: -1000px;
+  }
+  20% {
+    background-position: top left;
+  }
+  90% {
+    background-position: top right;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #shine {
+    font-size: 22px;
+  }
+  #hedlinecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 60px;
+  }
+
+  .gallery {
+    --d: 10s;
+    /* duration */
+    display: grid;
+    place-items: center; /* Center both horizontally and vertically */
+    width: 150px;
+    margin-left: 60px;
+  }
+}
+
+#div2,
+#div3 {
+  margin-top: 100px;
+  height: 100vh;
+}
+
+#div2 > h2 {
+  margin-top: 20%;
+  font-size: 3rem;
+  background-color: blue;
+}
+
+#div2 > p {
+  text-align: center;
+  font-size: 2rem;
+}
+#div2 img {
+  margin-left: 30%;
+  margin-right: 50%;
+}
+#div3 {
+  font-size: 3rem;
+  justify-self: center;
+  animation: colorrepeat 3s infinite;
+  background-color: ;
+}
+@-webkit-keyframes colorrepeat {
+  0% {
+    color: rgb(238, 147, 162);
+  }
+  50% {
+    color: purple;
+  }
+  100% {
+    color: rgb(238, 147, 162);
+  }
+}
+
+#div3 img {
+  margin-left: 40%;
+  margin-right: 50%;
+}
+
+.buttons {
+  margin-left: 40%;
+  margin-right: 20%;
+}
+.buttons button {
+  width: 70px;
+  height: 70px;
+  transition: 0.3s ease-in-out;
+  animation: backgroundrepeat 3s infinite;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  margin-left: 30px;
+}
+.buttons button:hover {
+  transform: scale(1.3);
+}
+@-webkit-keyframes backgroundrepeat {
+  0% {
+    background-color: rgba(238, 147, 162, 0.253);
+  }
+  50% {
+    background-color: rgba(128, 0, 128, 0.205);
+  }
+  100% {
+    background-color: rgba(238, 147, 162, 0.253);
+  }
+}
+#noBtn {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(238, 147, 162);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(238, 147, 162, 0.253);
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3%;
+  background-color: rgba(238, 147, 162, 0.253);
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+footer p {
+  padding-top: 10px;
+}
+
+.shine2 {
+  font-weight: bold;
+  color: rgba(255, 0, 102, 0.3);
+  z-index: 10;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#222),
+      to(#222),
+      color-stop(0.5, #fff)
+    )
+    0 0 no-repeat;
+  -webkit-background-size: 150px;
+  -webkit-background-clip: text;
+  -webkit-animation-name: shine;
+  -webkit-animation-duration: 1s; /* Adjust the duration as needed */
+  -webkit-animation-iteration-count: infinite;
+  text-shadow: 0 0px 0px rgba(255, 251, 0, 0.644);
+}
